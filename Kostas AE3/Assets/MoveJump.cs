@@ -8,8 +8,7 @@ public class MoveJump : MonoBehaviour
     public float Speed;
     public float JumpStrength;
     public float RayLength;
-
-    public GameObject ArrowFire;
+    
     public GameObject ArrowToRight, ArrowToLeft;
     Vector2 ArrowPos;
     public float FireRate;
@@ -27,19 +26,23 @@ public class MoveJump : MonoBehaviour
     }
 
 
+
+
+
     void Update()
     {
         rigid.velocity = new Vector2(CrossPlatformInputManager.GetAxisRaw("Horizontal") * Speed, rigid.velocity.y);
-        float  Horizontal = Input.GetAxis("Horizontal");
+        float Horizontal = CrossPlatformInputManager.GetAxisRaw("Horizontal");
         flip(Horizontal);
 
-        if(CrossPlatformInputManager.GetButton("Jump"))        
+        if (CrossPlatformInputManager.GetButtonDown("Jump"))        
         {
             Debug.Log("Jumping");
             if (Physics2D.Linecast(transform.position, transform.position + new Vector3(0, RayLength, 0), 1 << LayerMask.NameToLayer("Ground")))
             {
                 Debug.Log("ForceAdded");
-                rigid.AddForce(new Vector2(0, JumpStrength));
+                rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
+
             }
         }
 
@@ -54,12 +57,12 @@ public class MoveJump : MonoBehaviour
         ArrowPos = transform.position;
         if (facingRight)
         {
-            ArrowPos += new Vector2(+1f, -0.43f);
+            ArrowPos += new Vector2(+0.8f, 0f);
             Instantiate(ArrowToRight, ArrowPos, Quaternion.identity);
         }
         else
         {
-            ArrowPos += new Vector2(-1f, -0.43f);
+            ArrowPos += new Vector2(-0.8f, 0f);
             Instantiate(ArrowToLeft, ArrowPos, Quaternion.identity);
         }
     }

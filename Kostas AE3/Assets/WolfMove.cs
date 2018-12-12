@@ -6,12 +6,17 @@ public class WolfMove : MonoBehaviour
 {
     public float Speed;
     public float Stop;
+    public float RayLength;
+    public float JumpStrength; 
 
     private Transform target;
+
+    private Rigidbody2D rigid;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -19,6 +24,12 @@ public class WolfMove : MonoBehaviour
         if (Vector2.Distance(transform.position, target.position) > Stop)
         { 
             transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+        }
+
+        if (Physics2D.Linecast(transform.position, transform.position + new Vector3(RayLength, 0, 0), 1 << LayerMask.NameToLayer("Ground")))
+        {
+            Debug.Log("ForceAdded");
+            rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
         }
     }
 

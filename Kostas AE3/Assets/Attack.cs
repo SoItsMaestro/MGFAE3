@@ -5,8 +5,8 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    public float VelocityX;
-    public float VelocityY = 0f;
+    public float Speed;   
+    
     public GameObject Arrow;
     Rigidbody2D Rigid;
 
@@ -16,20 +16,23 @@ public class Attack : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Rigid.velocity = new Vector2(VelocityX, VelocityY);
-            Destroy(gameObject, 3f);
-        }
+    {       
+            Rigid.velocity = new Vector2(Speed * Time.deltaTime, 0);
+            Destroy(gameObject, 3f);  
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Dummy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy (gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 }

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114867105385512074}
   - component: {fileID: 61126645128690942}
   - component: {fileID: 50830048805621354}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArrowToRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0039747655, y: 0.017006334}
@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84957aba942774a4a9092e56d753e839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VelocityX: 5
-  VelocityY: 0
+  Speed: 500
   Arrow: {fileID: 1944745226662210}
 --- !u!212 &212049916459001052
 SpriteRenderer:
