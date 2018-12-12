@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 133712205}
   - component: {fileID: 133712207}
   - component: {fileID: 133712206}
+  - component: {fileID: 133712208}
   m_Layer: 10
   m_Name: Perimiter
   m_TagString: Untagged
@@ -278,11 +279,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133712204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.90000004, y: -0.03333346, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 1520303556}
+  m_Father: {fileID: 1144913361}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &133712206
@@ -294,10 +295,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -7, y: 0.26907015}
+  m_Offset: {x: -7, y: 0.7560363}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -308,7 +309,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.2475443}
+  m_Size: {x: 1, y: 2.273612}
   m_EdgeRadius: 0
 --- !u!61 &133712207
 BoxCollider2D:
@@ -319,10 +320,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 7, y: 0.26907015}
+  m_Offset: {x: 5, y: 0.72245264}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -333,8 +334,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.2475443}
+  m_Size: {x: 1, y: 2.3407793}
   m_EdgeRadius: 0
+--- !u!114 &133712208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133712204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c44e726f6fbc1642a5dae5d66753119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stop: 0
+  Agro: {fileID: 1520303554}
 --- !u!1 &193532601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1067,7 @@ GameObject:
   - component: {fileID: 1144913361}
   - component: {fileID: 1144913360}
   - component: {fileID: 1144913359}
+  - component: {fileID: 1144913363}
   - component: {fileID: 1144913358}
   - component: {fileID: 1144913362}
   - component: {fileID: 1144913357}
@@ -1116,7 +1131,7 @@ MonoBehaviour:
     type: 2}
   ArrowToLeft: {fileID: 1340662658053910, guid: f58157ed3600e7747971b43813ad4888,
     type: 2}
-  FireRate: 0.3
+  FireRate: 1
   Character:
     serializedVersion: 2
     m_Bits: 0
@@ -1174,9 +1189,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1144913356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.34, y: -2.37, z: 0}
+  m_LocalPosition: {x: 2.72, y: -1.2, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 133712205}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1198,6 +1214,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1144913363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1144913356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c3acb62eeeb234d8d152ad992f31f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Heart1: {fileID: 0}
+  Heart2: {fileID: 0}
+  Heart3: {fileID: 0}
+  Heart4: {fileID: 0}
 --- !u!1 &1204112218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3123,7 +3154,6 @@ GameObject:
   - component: {fileID: 1520303554}
   - component: {fileID: 1520303558}
   - component: {fileID: 1520303557}
-  - component: {fileID: 1520303559}
   m_Layer: 10
   m_Name: Wolf
   m_TagString: Untagged
@@ -3144,8 +3174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   Stop: 1
-  RayLength: 0
-  JumpStrength: 0
+  RayLength: -1
+  JumpStrength: 12
+  IsAgro: 0
 --- !u!212 &1520303555
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3198,10 +3229,9 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520303553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: -2.514, z: 0}
+  m_LocalPosition: {x: 2.69, y: -2.42, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children:
-  - {fileID: 133712205}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3240,18 +3270,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1520303559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1520303553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c44e726f6fbc1642a5dae5d66753119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 0
 --- !u!1 &1657400989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,9 +3423,10 @@ GameObject:
   - component: {fileID: 1730075413}
   - component: {fileID: 1730075415}
   - component: {fileID: 1730075416}
+  - component: {fileID: 1730075417}
   m_Layer: 0
   m_Name: TraningDummy_Hit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3505,6 +3524,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1730075417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1730075412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab2b9d45c70b1440b6140fb1b73052a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 4
+  CurrentHealth: 4
+  Speed: 0
+  JumpStreangth: 0
 --- !u!1 &1739078682
 GameObject:
   m_ObjectHideFlags: 0

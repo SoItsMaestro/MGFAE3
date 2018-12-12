@@ -4,14 +4,40 @@ using UnityEngine;
 
 public class WolfPerim : MonoBehaviour
 {
-    public float Speed;
-    private Transform target;
+    
+    public float Stop;
+    private Enemy enemy;
+    public WolfMove Agro;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Update()
     {
-        if(collision.gameObject.CompareTag("Enemy"))
+        if(enemy)
         {
-            //transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+           if(enemy.CurrentHealth <= 0)
+            {
+                Agro.IsAgro = false;
+                enemy = null;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (Agro.IsAgro == false)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                enemy = collision.GetComponent<Enemy>();
+                if (enemy)
+                {
+                    Agro.IsAgro = true;
+
+                    if (Vector2.Distance(transform.position, enemy.transform.position) > 0)
+                    {
+                        transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, 0);
+                    }
+                }
+            }
         }
     }
 

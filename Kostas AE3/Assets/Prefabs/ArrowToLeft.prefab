@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: -500
   Arrow: {fileID: 1340662658053910}
+  ArrowDmg: 1
 --- !u!212 &212336428040936058
 SpriteRenderer:
   m_ObjectHideFlags: 1

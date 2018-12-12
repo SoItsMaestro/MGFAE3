@@ -25,10 +25,6 @@ public class MoveJump : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
-
-
-
-
     void Update()
     {
         rigid.velocity = new Vector2(CrossPlatformInputManager.GetAxisRaw("Horizontal") * Speed, rigid.velocity.y);
