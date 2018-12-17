@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ArrowAttack : MonoBehaviour
 {
-    public float Speed;
-
-    public GameObject Arrow;
+    public float Speed;   
     public float ArrowDmg;
+    public float ExpDmg;
+    public float AimDmg;
+    public float FrostDmg;
+    public float ArcDmg;
+    public float BarrageDmg;
 
-    Rigidbody2D Rigid;      
+    Rigidbody2D Rigid;
 
+   
     private void Start()
     {
-        Rigid = GetComponent<Rigidbody2D>();
+        Rigid = GetComponent<Rigidbody2D>();        
     }
 
     void Update()
@@ -26,6 +30,7 @@ public class ArrowAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            
             Destroy(gameObject);
         }
 

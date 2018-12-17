@@ -8,9 +8,13 @@ public class WolfMove : MonoBehaviour
     public float Stop;
     public float RayLength;
     public float JumpStrength;
+    public float WolfDamage;
+    public float AgroRange;
+    
+    public bool IsAgro;
+    public bool JumpStop;
 
-   public bool IsAgro;
-
+    private WolfPerim Player;
     private Transform target;
 
     private Rigidbody2D rigid;
@@ -18,26 +22,36 @@ public class WolfMove : MonoBehaviour
     void Start()
     {
         IsAgro = false;
+        JumpStop = false;
 
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Player = GameObject.FindGameObjectWithTag("Player").transform.GetComponentInChildren<WolfPerim>();
+        target = Player.transform;
         rigid = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (!IsAgro)
+        target = (IsAgro) ? Player.enemy.transform : Player.transform;
+        if (Vector2.Distance(transform.position, Player.transform.position) > AgroRange)
         {
-            if (Vector2.Distance(transform.position, target.position) > Stop)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
-            }
+            target = Player.transform;
+            IsAgro = false;
+        }
 
-            if (Physics2D.Linecast(transform.position, transform.position + new Vector3(RayLength, 0, 0), 1 << LayerMask.NameToLayer("Ground")))
-            {
-                Debug.Log("ForceAdded");
-                rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
-            }
+
+        if (Vector2.Distance(transform.position, target.position) > Stop)
+        {
+           transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+        }
+
+        
+        if (Physics2D.Linecast(transform.position - new Vector3(RayLength, 0, 0), transform.position + new Vector3(RayLength, 0, 0), 1 << LayerMask.NameToLayer("Ground")))
+        {
+            
+            Debug.Log("ForceAdded");
+            rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
+            JumpStop = false;
+            
         }
     }
-
 }

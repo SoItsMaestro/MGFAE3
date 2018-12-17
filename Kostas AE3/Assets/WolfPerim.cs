@@ -6,17 +6,30 @@ public class WolfPerim : MonoBehaviour
 {
     
     public float Stop;
-    private Enemy enemy;
+    internal Enemy enemy;
     public WolfMove Agro;
+   
+    private bool Check = false;
 
     void Update()
     {
-        if(enemy)
+        if (Check)
         {
-           if(enemy.CurrentHealth <= 0)
+            if (enemy)
             {
+                if (enemy.CurrentHealth <= 0)
+                {
+                    Debug.Log("Ran");
+                    Agro.IsAgro = false;
+                    enemy = null;
+                }
+            }
+            else
+            {
+                Debug.Log("Ran");
                 Agro.IsAgro = false;
                 enemy = null;
+                Check = false;
             }
         }
     }
@@ -27,15 +40,14 @@ public class WolfPerim : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
+                Debug.Log("Hit");
                 enemy = collision.GetComponent<Enemy>();
                 if (enemy)
-                {
-                    Agro.IsAgro = true;
+                {                    
+                        Agro.IsAgro = true;
 
-                    if (Vector2.Distance(transform.position, enemy.transform.position) > 0)
-                    {
-                        transform.position = Vector2.MoveTowards(transform.position, enemy.transform.position, 0);
-                    }
+                        Check = true;
+                   
                 }
             }
         }

@@ -7,7 +7,8 @@ public class Enemy : MonoBehaviour
     public float MaxHealth;
     public float CurrentHealth;
     public float Speed;
-    public float JumpStreangth;  
+    public float JumpStreangth;
+    public float EnemyDamage;
    
 	void Start ()
     {
@@ -25,6 +26,19 @@ public class Enemy : MonoBehaviour
         if(Damage)
         {            
             CurrentHealth -= Damage.ArrowDmg;
+            if(CurrentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+        WolfMove WolfDmg = collision.gameObject.GetComponent<WolfMove>();
+        if(WolfDmg)
+        {
+            CurrentHealth -= WolfDmg.WolfDamage;
+            if (CurrentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
