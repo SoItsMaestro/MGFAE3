@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4165578047031098}
   - component: {fileID: 212049916459001052}
-  - component: {fileID: 114867105385512074}
+  - component: {fileID: 114684166587619084}
   - component: {fileID: 61126645128690942}
   - component: {fileID: 50830048805621354}
   m_Layer: 11
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41969764, y: 0.10259161}
   m_EdgeRadius: 0
---- !u!114 &114867105385512074
+--- !u!114 &114684166587619084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,12 +96,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944745226662210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84957aba942774a4a9092e56d753e839, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab2d478c623ac143abb4e5f54110bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 500
-  Arrow: {fileID: 1944745226662210}
   ArrowDmg: 1
+  ExpDmg: 0
+  AimDmg: 0
+  FrostDmg: 0
+  ArcDmg: 0
+  BarrageDmg: 0
 --- !u!212 &212049916459001052
 SpriteRenderer:
   m_ObjectHideFlags: 1
