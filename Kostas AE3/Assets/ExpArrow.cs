@@ -68,28 +68,28 @@ public class ExpArrow : MonoBehaviour
             }
         }
 
-        // if (Down)
-        // {
-        //     Debug.Log("Moving");
-        //     Vector2 temp = new Vector2(LastTouchScreenPos.y, Bat.transform.position.y);
-        //
-        //     Bat.transform.position = Vector2.MoveTowards(ExplosionArrow.transform.position, temp, 3f * Time.deltaTime);
-
-
-        ArrowPos = transform.position;
-        if (facingRight) //Checks the way the player is facing
+        if (Down)
         {
-            ArrowPos += new Vector2(+0.8f, 0f); //Sets the Right position of the arrow on the player
-            Instantiate(ArrowExpRight, ArrowPos, Quaternion.identity); //Creates the arrow
-        }
-        else
-        {
-            ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
-            Instantiate(ArrowExpLeft, ArrowPos, Quaternion.identity); //Creates the arrow
-        }
+            Debug.Log("Moving");
+            Vector2 temp = new Vector2(LastTouchScreenPos.y, ArrowExpRight.transform.position.y);
+
+            ArrowExpRight.transform.position = Vector2.MoveTowards(ArrowExpRight.transform.position, temp, 3f * Time.deltaTime);
+
+
+        //ArrowPos = transform.position;
+        //if (facingRight) //Checks the way the player is facing
+        //{
+        //    ArrowPos += new Vector2(+0.8f, 0f); //Sets the Right position of the arrow on the player
+        //    Instantiate(ArrowExpRight, ArrowPos, Quaternion.identity); //Creates the arrow
+        //}
+        //else
+        //{
+        //    ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
+        //    Instantiate(ArrowExpLeft, ArrowPos, Quaternion.identity); //Creates the arrow
+        //}
 
 
 
-        // }
+         }
     }
 }

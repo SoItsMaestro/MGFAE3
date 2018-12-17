@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Key
+  - Interact
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Player
   - Wolf
   - Arrow
-  - 
+  - Chest
   - 
   - 
   - 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 public class MoveJump : MonoBehaviour
 {
@@ -19,11 +20,15 @@ public class MoveJump : MonoBehaviour
     public bool facingRight = true;
     private bool PlayerHit;
     private bool Once;
+    public bool Speachm;
+    public GameObject SpeachMark;
+
 
     private Rigidbody2D rigid;
 
     void Start()
     {
+        Speachm = false;
         PlayerHit = false;
         Once = true;
         rigid = GetComponent<Rigidbody2D>();
@@ -42,8 +47,18 @@ public class MoveJump : MonoBehaviour
             {
                 Debug.Log("ForceAdded");
                 rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength); //Adds the force to make jump happen
-
             }
+            else
+            {
+                if(Speachm == true)
+                {
+                    if(CrossPlatformInputManager.GetButtonDown("Jump"))
+                    {
+
+                    }
+                }
+            }
+
         }
 
         if (Input.GetButtonDown("Fire1") && Time.time > nextfire) //When MB1 pressed, fires
@@ -87,19 +102,60 @@ public class MoveJump : MonoBehaviour
             if (PlayerHit)
             {
                 Debug.Log("HealthDecrease");
-                if (Once)
-                {
-                    StaticHealth.health -= 1;
-                    PlayerHit = false;
-                    Once = false;
-                }
-            }
+               // if (Once)
+               // {
+               //     StaticHealth.health -= 1;
+               //     PlayerHit = false;
+               //     Once = false;
+               // }
+            }  //
 
             Debug.Log(StaticHealth.health);
-            if (StaticHealth.health <= 0)
-            {
-                Destroy(gameObject);
-            }
+            //if (StaticHealth.health <= 0)
+            //{
+            //    Destroy(gameObject);
+            //}
+        }        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Interact"))
+        {            
+            SpeachMark.gameObject.SetActive(true);
+            Debug.Log("Collide");
+           
+            Speachm = true;           
         }
-    }   
+        else
+        {
+            SpeachMark.gameObject.SetActive(false);
+            Speachm = false;
+        }
+
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            Debug.Log("Collide");
+            NextScene();
+        }
+    }
+
+    void NextScene()
+    {
+        SceneManager.LoadScene("Transition");
+    }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Enemy"))
+    //    {
+    //
+    //        Destroy(gameObject);
+    //    }
+    //
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 }
