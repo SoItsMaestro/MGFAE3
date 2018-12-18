@@ -1241,6 +1241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32ad5c7365b0c14b96b855ad737e17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnim: {fileID: 1144913362}
   Speed: 5
   JumpStrength: 12
   RayLength: -1
@@ -1254,8 +1255,6 @@ MonoBehaviour:
     m_Bits: 0
   jumps: 1
   facingRight: 1
-  Speachm: 0
-  SpeachMark: {fileID: 1730982166}
 --- !u!212 &1144913360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1295,8 +1294,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_DrawMode: 1
+  m_Size: {x: 0.85, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1308,8 +1307,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1144913356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.12, y: 15.27, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 14.68, y: 11.34, z: 0}
+  m_LocalScale: {x: 1.5000001, y: 1.5, z: 1}
   m_Children:
   - {fileID: 133712205}
   - {fileID: 1730982168}
