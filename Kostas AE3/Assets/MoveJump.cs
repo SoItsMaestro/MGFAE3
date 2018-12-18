@@ -20,15 +20,11 @@ public class MoveJump : MonoBehaviour
     public bool facingRight = true;
     private bool PlayerHit;
     private bool Once;
-    public bool Speachm;
-    public GameObject SpeachMark;
-
 
     private Rigidbody2D rigid;
 
     void Start()
-    {
-        Speachm = false;
+    {        
         PlayerHit = false;
         Once = true;
         rigid = GetComponent<Rigidbody2D>();
@@ -50,13 +46,13 @@ public class MoveJump : MonoBehaviour
             }
             else
             {
-                if(Speachm == true)
-                {
-                    if(CrossPlatformInputManager.GetButtonDown("Jump"))
-                    {
-
-                    }
-                }
+                //if(Speachm == true)
+                //{
+                //    if(CrossPlatformInputManager.GetButtonDown("Jump"))
+                //    {
+                //
+                //    }
+                //}
             }
 
         }
@@ -120,19 +116,6 @@ public class MoveJump : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Interact"))
-        {            
-            SpeachMark.gameObject.SetActive(true);
-            Debug.Log("Collide");
-           
-            Speachm = true;           
-        }
-        else
-        {
-            SpeachMark.gameObject.SetActive(false);
-            Speachm = false;
-        }
-
         if (collision.gameObject.CompareTag("Door"))
         {
             Debug.Log("Collide");
