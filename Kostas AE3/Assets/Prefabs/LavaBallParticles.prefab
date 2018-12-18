@@ -9,20 +9,22 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1121071303245322}
+  m_RootGameObject: {fileID: 1951444136087872}
   m_IsPrefabParent: 1
---- !u!1 &1121071303245322
+--- !u!1 &1951444136087872
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4503052809958216}
-  - component: {fileID: 198414378183916582}
-  - component: {fileID: 199595595003100690}
-  - component: {fileID: 70225881973919754}
-  - component: {fileID: 50175779533485944}
+  - component: {fileID: 4837042103394012}
+  - component: {fileID: 198358180470091898}
+  - component: {fileID: 199135398421846852}
+  - component: {fileID: 70489931961112766}
+  - component: {fileID: 114733757403515556}
+  - component: {fileID: 50192834792389084}
+  - component: {fileID: 95431451766462708}
   m_Layer: 0
   m_Name: LavaBallParticles
   m_TagString: Untagged
@@ -30,26 +32,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4503052809958216
+--- !u!4 &4837042103394012
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121071303245322}
+  m_GameObject: {fileID: 1951444136087872}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.13, y: 6.26, z: 0.05}
+  m_LocalPosition: {x: -2.98, y: -4.56, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!50 &50175779533485944
+--- !u!50 &50192834792389084
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121071303245322}
+  m_GameObject: {fileID: 1951444136087872}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -63,12 +65,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &70225881973919754
+--- !u!70 &70489931961112766
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121071303245322}
+  m_GameObject: {fileID: 1951444136087872}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -78,12 +80,44 @@ CapsuleCollider2D:
   m_Offset: {x: 0.113033235, y: 0}
   m_Size: {x: 1.0143539, y: 0.0001}
   m_Direction: 0
---- !u!198 &198414378183916582
+--- !u!95 &95431451766462708
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951444136087872}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e6cd05d449e07d43a9de65e2fac037f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114733757403515556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951444136087872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e813fd82b8497d44a8f788c1aa9c295b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartHeight: -0.5
+  height: 5
+  speed: 1.7
+--- !u!198 &198358180470091898
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121071303245322}
+  m_GameObject: {fileID: 1951444136087872}
   serializedVersion: 5
   lengthInSec: 0.1
   simulationSpeed: 1
@@ -4666,13 +4700,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199595595003100690
+--- !u!199 &199135398421846852
 ParticleSystemRenderer:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1121071303245322}
+  m_GameObject: {fileID: 1951444136087872}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
