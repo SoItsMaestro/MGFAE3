@@ -21,6 +21,10 @@ public class MoveJump : MonoBehaviour
     private bool PlayerHit;
     private bool Once;
 
+    public ArrowAttack Aim;
+    float Timer;
+    float HoldDuration = 3f;
+
     private Rigidbody2D rigid;
 
     void Start()
@@ -44,20 +48,17 @@ public class MoveJump : MonoBehaviour
                 Debug.Log("ForceAdded");
                 rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength); //Adds the force to make jump happen
             }
-            else if(Once == true)
-            {
-                //if(Speachm == true)
-                //{
-                //    if(CrossPlatformInputManager.GetButtonDown("Jump"))
-                //    {
-                //
-                //    }
-                //}
-            }
-            //else if()
+            //else if(Once == true)
             //{
-            //
+            //    //if(Speachm == true)
+            //    //{
+            //    //    if(CrossPlatformInputManager.GetButtonDown("Jump"))
+            //    //    {
+            //    //
+            //    //    }
+            //    //}
             //}
+           
 
         }
 
@@ -66,6 +67,20 @@ public class MoveJump : MonoBehaviour
             nextfire = Time.time + FireRate; //Duration between arrow fire
             fire(); //Calls fire function
         }
+        //else
+        //{
+        //    if(CrossPlatformInputManager.GetButtonDown("Fire1"))
+        //    {
+        //        if(Time.time - Timer > HoldDuration)
+        //        {
+        //            Timer = float.PositiveInfinity;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Timer = float.PositiveInfinity;
+        //    }
+        //}
     }
 
     void fire() //Fire funcction

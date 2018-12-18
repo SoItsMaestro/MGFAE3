@@ -24,9 +24,8 @@ public class ArrowAttack : MonoBehaviour
     {
         Rigid.velocity = new Vector2(Speed * Time.deltaTime, 0);
         Destroy(gameObject, 3f);
-    }
+    }   
 
-   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))

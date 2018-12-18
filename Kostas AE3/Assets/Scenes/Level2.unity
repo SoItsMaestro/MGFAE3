@@ -1770,9 +1770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32ad5c7365b0c14b96b855ad737e17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
-  JumpStrength: 0
-  RayLength: 0
+  Speed: 2
+  JumpStrength: 15
+  RayLength: 1
   ArrowToRight: {fileID: 1944745226662210, guid: d113673285754464a9ddec68a709c62b,
     type: 2}
   ArrowToLeft: {fileID: 1340662658053910, guid: f58157ed3600e7747971b43813ad4888,
