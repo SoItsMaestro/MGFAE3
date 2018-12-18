@@ -54,10 +54,10 @@ public class MoveJump : MonoBehaviour
                 //    }
                 //}
             }
-            else if()
-            {
-
-            }
+            //else if()
+            //{
+            //
+            //}
 
         }
 
