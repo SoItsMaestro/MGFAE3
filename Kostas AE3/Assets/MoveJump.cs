@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MoveJump : MonoBehaviour
 {
-    public Animator playerAnim;  //references player animator
-
     public float Speed;
     public float JumpStrength;
     public float RayLength;
-
+    
     public GameObject ArrowToRight, ArrowToLeft;
     Vector2 ArrowPos;
     public float FireRate;
@@ -26,22 +24,17 @@ public class MoveJump : MonoBehaviour
     private Rigidbody2D rigid;
 
     void Start()
-    {
+    {        
         PlayerHit = false;
         Once = true;
         rigid = GetComponent<Rigidbody2D>();
     }
 
-void Update()
+    void Update()
     {
         rigid.velocity = new Vector2(CrossPlatformInputManager.GetAxisRaw("Horizontal") * Speed, rigid.velocity.y);  //Moves that player acrosst the horizontal plane using the thumbstick
         float Horizontal = CrossPlatformInputManager.GetAxisRaw("Horizontal"); //Flips player
         flip(Horizontal); //Calls flip function
-
-
-
-        playerAnim.SetFloat("Speed", Mathf.Abs(Horizontal)); //Set Walking animation to true
-        //playerAnim.SetBool("IsAttacking", false);
 
         if (CrossPlatformInputManager.GetButtonDown("Jump")) //When jump button pressed player jumps     
         {
@@ -51,7 +44,7 @@ void Update()
                 Debug.Log("ForceAdded");
                 rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength); //Adds the force to make jump happen
             }
-            else
+            else if(Once == true)
             {
                 //if(Speachm == true)
                 //{
@@ -61,16 +54,17 @@ void Update()
                 //    }
                 //}
             }
+            else if()
+            {
 
+            }
 
         }
 
-        if (Input.GetButtonDown("Fire1") && Time.time > nextfire) //When MB1 pressed, fires
+        if (CrossPlatformInputManager.GetButtonDown("Fire1") && Time.time > nextfire) //When MB1 pressed, fires
         {
             nextfire = Time.time + FireRate; //Duration between arrow fire
             fire(); //Calls fire function
-
-
         }
     }
 
@@ -81,24 +75,21 @@ void Update()
         {
             ArrowPos += new Vector2(+0.8f, 0f); //Sets the Right position of the arrow on the player
             Instantiate(ArrowToRight, ArrowPos, Quaternion.identity); //Creates the arrow
-
         }
         else
         {
             ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
             Instantiate(ArrowToLeft, ArrowPos, Quaternion.identity); //Creates the arrow
-
         }
-
     }
 
     void flip(float Horizontal) //Flip function
     {
-        if (Horizontal > 0 && !facingRight || Horizontal < 0 && facingRight) //Checks which way the player is facing
+        if(Horizontal > 0 && !facingRight  || Horizontal < 0 && facingRight) //Checks which way the player is facing
         {
             facingRight = !facingRight; //Facking right = false
             Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
+            theScale.x *= -1; 
             transform.localScale = theScale;
         }
     }
@@ -111,12 +102,12 @@ void Update()
             if (PlayerHit)
             {
                 Debug.Log("HealthDecrease");
-                // if (Once)
-                // {
-                //     StaticHealth.health -= 1;
-                //     PlayerHit = false;
-                //     Once = false;
-                // }
+               // if (Once)
+               // {
+               //     StaticHealth.health -= 1;
+               //     PlayerHit = false;
+               //     Once = false;
+               // }
             }  //
 
             Debug.Log(StaticHealth.health);
@@ -124,7 +115,7 @@ void Update()
             //{
             //    Destroy(gameObject);
             //}
-        }
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -153,24 +144,5 @@ void Update()
     //    {
     //        Destroy(gameObject);
     //    }
-
-
-    
-
-
-
-
-
+    //}
 }
-
-
-    
-    
-
-    
-
-
- 
-
-
-
