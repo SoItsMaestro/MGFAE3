@@ -8,6 +8,8 @@ public class CircularPatrol : MonoBehaviour
     public float Width;
     public float Height;
     public float timeCounter = 0;
+    public float PositionX;
+    public float PositionY;
 	
 	void Start ()
     {
@@ -19,10 +21,9 @@ public class CircularPatrol : MonoBehaviour
     {
         timeCounter += Time.deltaTime * Speed;
 
-        float x = Mathf.Cos(timeCounter) * Width;
-        float y = Mathf.Sin(timeCounter) * Height;
-        float z = 0;
-
-        transform.position = new Vector3(x, y, z);
+        float x = Mathf.Cos(timeCounter) * Width + PositionX;
+        float y = Mathf.Sin(timeCounter) * Height + PositionY;
+       
+        transform.position = new Vector3(x, y, 0);
 	}
 }

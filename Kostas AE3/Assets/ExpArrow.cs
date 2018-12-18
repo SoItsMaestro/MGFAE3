@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExpArrow : MonoBehaviour
 {
+    public float ExpArrowWait;
+    private float ExpArrowWait_;
 
     private Vector3 FirstTouchPos;
     private Vector3 LastTouchPos;
@@ -18,19 +20,32 @@ public class ExpArrow : MonoBehaviour
     Vector2 ArrowPos;
 
     public bool facingRight = true;
+    public bool Right;
+    public bool Left;
+    public bool Up;
     public bool Down;
+
+    //public Transform HitPoint;
+    //public Transform FirePoint;
+    //public GameObject ExplosionArrow;
+    //public float TimeToImpact;
+
+    Rigidbody2D Rigid;
 
     void Start()
     {
+        Right = false;
+        Left = false;
+        Up = false;
         Down = false;
 
         dragDist = Screen.height * ScreenPercent / 100;
+
+        //ExpArrowfire();
     }
 
-    private void Update()
+    void Update()
     {
-
-
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
@@ -54,42 +69,120 @@ public class ExpArrow : MonoBehaviour
                 LastTouchPos = touch.position;
                 LastTouchScreenPos = Camera.main.ScreenToWorldPoint(touch.position);
 
+
                 if (Mathf.Abs(LastTouchPos.x - FirstTouchPos.x) > dragDist || Mathf.Abs(LastTouchPos.y - FirstTouchPos.y) > dragDist)
                 {
+
                     if (Mathf.Abs(LastTouchPos.x - FirstTouchPos.x) > Mathf.Abs(LastTouchPos.y - FirstTouchPos.y))
                     {
-                        if ((LastTouchPos.y > FirstTouchPos.y))
-                        {                            
-                            Down = true;
-                            Debug.Log("Down");
-                        }                        
+
+
+                        if ((LastTouchPos.x > FirstTouchPos.x))
+                        {
+                            Right = true;
+                            Left = false;
+                            Up = false;
+                            Down = false;
+
+                            Debug.Log("right");
+                        }
+                        else
+                        {
+                            Right = false;
+                            Left = true;
+                            Up = false;
+                            Down = false;
+
+                            Debug.Log("left");
+                        }
                     }
+                    else
+                    {
+                        //the vertical movement is greater than the horizontal movement
+                        if (LastTouchPos.y > FirstTouchPos.y)  //If the movement was up
+                        {
+                            Right = false;
+                            Left = false;
+                            Up = true;
+                            Down = false;
+
+                            Debug.Log("up");
+                        }
+                        else
+                        {
+                            Right = false;
+                            Left = false;
+                            Up = false;
+                            Down = true;
+
+                            Debug.Log("down");
+                        }
+                    }
+
+                }
+                else
+                {
+                    //It's a tap as the drag distance is less than N% of the screen height
+
                 }
             }
+        }        
+        if (Down && Time.time > ExpArrowWait_)
+        {
+            ExpArrowWait_ = Time.time + ExpArrowWait;
+            fire();
+        }                    
+    }
+
+    //void ExpArrowfire()
+    //{
+    //    float xdistance;
+    //    xdistance = HitPoint.position.x - FirePoint.position.x;
+    //
+    //    float ydistance;
+    //    ydistance = HitPoint.position.y - FirePoint.position.y;
+    //
+    //    float Angle;
+    //    Angle = Mathf.Atan((ydistance + 4.905f) / xdistance);
+    //
+    //    float TotalVelocity = xdistance / Mathf.Cos(Angle);
+    //
+    //    float xVelocity, yVelocity;
+    //    xVelocity = TotalVelocity * Mathf.Cos(Angle);
+    //    yVelocity = TotalVelocity * Mathf.Sin(Angle);
+    //
+    //    GameObject bulletInstance = Instantiate(ExplosionArrow, FirePoint.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
+    //    Rigid = bulletInstance.GetComponent<Rigidbody2D>();
+    //    Rigid.velocity = new Vector2(xVelocity, yVelocity);
+    //}
+
+    void fire()
+    {
+        ArrowPos = transform.position;
+        if (facingRight) //Checks the way the player is facing
+        {
+            ArrowPos += new Vector2(+0.8f, 0f); //Sets the Right position of the arrow on the player
+            Instantiate(ArrowExpRight, ArrowPos, Quaternion.identity); //Creates the arrow
+        }
+        else
+        {
+            ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
+            Instantiate(ArrowExpLeft, ArrowPos, Quaternion.identity); //Creates the arrow
+        }
+        Down = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+
+            
         }
 
-        if (Down)
-        {
-            Debug.Log("Moving");
-            Vector2 temp = new Vector2(LastTouchScreenPos.y, ArrowExpRight.transform.position.y);
-
-            ArrowExpRight.transform.position = Vector2.MoveTowards(ArrowExpRight.transform.position, temp, 3f * Time.deltaTime);
-
-
-        //ArrowPos = transform.position;
-        //if (facingRight) //Checks the way the player is facing
+        //if (collision.gameObject.CompareTag("Ground"))
         //{
-        //    ArrowPos += new Vector2(+0.8f, 0f); //Sets the Right position of the arrow on the player
-        //    Instantiate(ArrowExpRight, ArrowPos, Quaternion.identity); //Creates the arrow
+        //    Destroy(gameObject);
         //}
-        //else
-        //{
-        //    ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
-        //    Instantiate(ArrowExpLeft, ArrowPos, Quaternion.identity); //Creates the arrow
-        //}
-
-
-
-         }
     }
 }

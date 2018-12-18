@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowAttack : MonoBehaviour
 {
-    public float Speed;   
+    public float Speed;
     public float ArrowDmg;
     public float ExpDmg;
     public float AimDmg;
@@ -14,10 +14,11 @@ public class ArrowAttack : MonoBehaviour
 
     Rigidbody2D Rigid;
 
-   
+
     private void Start()
     {
-        Rigid = GetComponent<Rigidbody2D>();        
+        
+        Rigid = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class ArrowAttack : MonoBehaviour
         Destroy(gameObject, 3f);
     }
 
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -34,9 +36,9 @@ public class ArrowAttack : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Destroy(gameObject);
-        }
+        //if (collision.gameObject.CompareTag("Ground"))
+        //{
+        //    Destroy(gameObject);
+        //}
     }      
 }

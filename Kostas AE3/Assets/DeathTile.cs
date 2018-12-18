@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spikes : MonoBehaviour
+public class DeathTile : MonoBehaviour
 {
     public GameObject Spike;
 
