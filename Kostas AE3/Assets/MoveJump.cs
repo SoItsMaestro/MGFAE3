@@ -21,9 +21,15 @@ public class MoveJump : MonoBehaviour
     private bool PlayerHit;
     private bool Once;
 
+    public Interactable Speachmark;
+    public InteractableNotTrigger Speachmark2;
+
     public ArrowAttack Aim;
     float Timer;
     float HoldDuration = 3f;
+
+    public GameObject Chest1;
+    public GameObject Chest2;
 
     private Rigidbody2D rigid;
 
@@ -48,16 +54,16 @@ public class MoveJump : MonoBehaviour
                 Debug.Log("ForceAdded");
                 rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength); //Adds the force to make jump happen
             }
-            //else if(Once == true)
-            //{
-            //    //if(Speachm == true)
-            //    //{
-            //    //    if(CrossPlatformInputManager.GetButtonDown("Jump"))
-            //    //    {
-            //    //
-            //    //    }
-            //    //}
-            //}
+           // else if (Speachmark.Speachm == true || Speachmark2.Speachm == true)
+           // {
+           //     Debug.Log("work");
+           //         if(CrossPlatformInputManager.GetButtonDown("Jump"))
+           //         {
+           //             Chest1.SetActive(false);
+           //             Chest1.SetActive(true);
+           //         }
+           //     
+           // }
            
 
         }

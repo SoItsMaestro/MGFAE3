@@ -478,6 +478,11 @@ MonoBehaviour:
     m_Bits: 0
   jumps: 1
   facingRight: 1
+  Speachmark: {fileID: 0}
+  Speachmark2: {fileID: 0}
+  Aim: {fileID: 0}
+  Chest1: {fileID: 883784}
+  Chest2: {fileID: 0}
 --- !u!212 &432904280
 SpriteRenderer:
   m_ObjectHideFlags: 0

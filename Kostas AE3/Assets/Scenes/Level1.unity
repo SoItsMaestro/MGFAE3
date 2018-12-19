@@ -1432,6 +1432,11 @@ MonoBehaviour:
     m_Bits: 0
   jumps: 1
   facingRight: 1
+  Speachmark: {fileID: 0}
+  Speachmark2: {fileID: 0}
+  Aim: {fileID: 0}
+  Chest1: {fileID: 0}
+  Chest2: {fileID: 0}
 --- !u!212 &1144913360
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3633,7 +3638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1503674053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.77, y: 3.43, z: 0}
+  m_LocalPosition: {x: 13.01, y: -1.98, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children:
   - {fileID: 1064600509}
@@ -3659,7 +3664,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1503674059
 BoxCollider2D:
   m_ObjectHideFlags: 0
