@@ -10,7 +10,7 @@ public class Firetiles : MonoBehaviour
 	
 	void Start ()
     {
-        FireOnbool = false;
+        FireOnbool = false;        
 	}
 	
 	
@@ -19,10 +19,13 @@ public class Firetiles : MonoBehaviour
         FireActive();
         if(FireOn >= 1)
         {
-            FireOnbool = true;        
-                
-                FireOn = 0;
+            FireOnbool = true;
             
+            if (FireOnbool == true)
+            {
+                Debug.Log("here");
+                StartCoroutine(Duration());                
+            }
         }
         else
         {
@@ -40,9 +43,8 @@ public class Firetiles : MonoBehaviour
             Fireoff = Time.time + FireOn;
         }
     }
-
     
-private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (FireOnbool == true)
         {
@@ -52,5 +54,11 @@ private void OnCollisionEnter2D(Collision2D collision)
                 Debug.Log("Collide");
             }            
         }
+    }
+
+    IEnumerator Duration()
+    {
+        yield return new WaitForSeconds(1);
+        FireOn = 0;
     }
 }
