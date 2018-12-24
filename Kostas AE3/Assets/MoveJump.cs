@@ -123,19 +123,20 @@ public class MoveJump : MonoBehaviour
             if (PlayerHit)
             {
                 Debug.Log("HealthDecrease");
-               // if (Once)
-               // {
-               //     StaticHealth.health -= 1;
-               //     PlayerHit = false;
-               //     Once = false;
-               // }
-            }  //
+                if (Once)
+                {
+                    StaticHealth.health -= 1;
+                    PlayerHit = false;
+                    Once = false;
+                    StartCoroutine(InvinceDuration());
+                }
+            }   
 
             Debug.Log(StaticHealth.health);
-            //if (StaticHealth.health <= 0)
-            //{
-            //    Destroy(gameObject);
-            //}
+            if (StaticHealth.health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }        
     }
 
@@ -151,6 +152,11 @@ public class MoveJump : MonoBehaviour
     void NextScene()
     {
         SceneManager.LoadScene("Transition");
+    }
+
+    IEnumerator InvinceDuration()
+    {
+        yield return new WaitForSeconds(4);       
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

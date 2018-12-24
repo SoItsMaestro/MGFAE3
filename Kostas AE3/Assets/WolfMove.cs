@@ -50,8 +50,10 @@ public class WolfMove : MonoBehaviour
             
             Debug.Log("ForceAdded");
             rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
-            JumpStop = false;
-            
+            JumpStop = false;            
         }
+
+        
     }
+    
 }
