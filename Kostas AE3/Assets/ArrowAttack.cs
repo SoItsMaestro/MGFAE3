@@ -32,7 +32,14 @@ public class ArrowAttack : MonoBehaviour
         {            
             Destroy(gameObject);
         }
-
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("DestObj"))
+        {
+            Destroy(gameObject);
+        }
         //if (collision.gameObject.CompareTag("Ground"))
         //{
         //    Destroy(gameObject);

@@ -11,6 +11,9 @@ TagManager:
   - Door
   - Spike
   - Platform
+  - Button1
+  - Arrow
+  - DestObj
   layers:
   - Default
   - TransparentFX

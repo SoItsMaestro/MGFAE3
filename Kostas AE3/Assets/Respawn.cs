@@ -11,7 +11,7 @@ public class Respawn : MonoBehaviour
     {
         if (StaticHealth.health <= 0)
         {
-            Destroy(player);
+           
             player.transform.position = respawnPoint.transform.position;
         }
     }

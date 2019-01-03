@@ -131,13 +131,26 @@ public class MoveJump : MonoBehaviour
                     Debug.Log(StaticHealth.health);                                  
                 }                
                 Debug.Log(StaticHealth.health);
-                //if (StaticHealth.health <= 0)
-                //{
-                //    Destroy(gameObject);
-                //    gameObject.transform.position = respawnPoint.transform.position;
-                //}
+                
+            }
+            
+            if (collision.gameObject.CompareTag("Arrow"))
+            {
+                Once = true;
+                Invoke("ResetInvunrability", 2);
+                if (Once == true)
+                {
+                    StaticHealth.health -= 1;
+                    Debug.Log(StaticHealth.health);
+                }
             }
         }
+        //if (StaticHealth.health <= 0)
+        //{
+        //    Destroy(gameObject);
+        //    gameObject.transform.position = respawnPoint.transform.position;
+        //}
+
     }
     void ResetInvunrability()
     {
