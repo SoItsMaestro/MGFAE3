@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: New Piskel (1)_5
+  m_Name: WindowBR
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300010, guid: 18e814ac661e0ae4a915f5e9ebcd1818, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fd2b271e56bae347b169d4006cdf436, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

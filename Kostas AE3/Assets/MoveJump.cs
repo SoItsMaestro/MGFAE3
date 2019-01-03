@@ -9,6 +9,7 @@ public class MoveJump : MonoBehaviour
     public float Speed;
     public float JumpStrength;
     public float RayLength;
+    public GameObject respawnPoint;
     
     public GameObject ArrowToRight, ArrowToLeft;
     Vector2 ArrowPos;
@@ -18,7 +19,6 @@ public class MoveJump : MonoBehaviour
 
     public bool jumps = true;
     public bool facingRight = true;
-    private bool PlayerHit;
     private bool Once;
 
     public Interactable Speachmark;
@@ -34,9 +34,8 @@ public class MoveJump : MonoBehaviour
     private Rigidbody2D rigid;
 
     void Start()
-    {        
-        PlayerHit = false;
-        Once = true;
+    {                
+        Once = false;
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -118,26 +117,31 @@ public class MoveJump : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy Damage = collision.gameObject.GetComponent<Enemy>();
-        if (Damage)
-        {
-            if (PlayerHit)
+        if (!Once)
+        {            
+            if (Damage)
             {
-                Debug.Log("HealthDecrease");
-                if (Once)
+                Once = true;
+                Invoke("ResetInvunrability", 2);
+                if (Once == true)
                 {
+                    Debug.Log("HealthDecrease");
+                
                     StaticHealth.health -= 1;
-                    PlayerHit = false;
-                    Once = false;
-                    StartCoroutine(InvinceDuration());
-                }
-            }   
-
-            Debug.Log(StaticHealth.health);
-            if (StaticHealth.health <= 0)
-            {
-                Destroy(gameObject);
+                    Debug.Log(StaticHealth.health);                                  
+                }                
+                Debug.Log(StaticHealth.health);
+                //if (StaticHealth.health <= 0)
+                //{
+                //    Destroy(gameObject);
+                //    gameObject.transform.position = respawnPoint.transform.position;
+                //}
             }
-        }        
+        }
+    }
+    void ResetInvunrability()
+    {
+        Once = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -154,22 +158,7 @@ public class MoveJump : MonoBehaviour
         SceneManager.LoadScene("Transition");
     }
 
-    IEnumerator InvinceDuration()
-    {
-        yield return new WaitForSeconds(4);       
-    }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy"))
-    //    {
-    //
-    //        Destroy(gameObject);
-    //    }
-    //
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+    
+    
+    
 }
