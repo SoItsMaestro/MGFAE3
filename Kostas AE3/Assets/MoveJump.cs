@@ -121,6 +121,32 @@ public class MoveJump : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Enemy Damage = collision.gameObject.GetComponent<Enemy>();
+        if (!Once)
+        {
+            if (Damage)
+            {
+                Once = true;
+                Invoke("ResetInvunrability", 2);
+                if (Once == true)
+                {
+                    Debug.Log("HealthDecrease");
+
+                    StaticHealth.health -= 1;
+                    Debug.Log(StaticHealth.health);
+                }
+                Debug.Log(StaticHealth.health);
+
+            }
+        }
+        if (collision.gameObject.CompareTag("Door"))
+        {
+            Debug.Log("Collide");
+            NextScene();
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy Damage = collision.gameObject.GetComponent<Enemy>();
@@ -175,14 +201,14 @@ public class MoveJump : MonoBehaviour
         Once = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Door"))
-        {
-            Debug.Log("Collide");
-            NextScene();
-        }
-    }
+   // private void OnTriggerEnter2D(Collider2D collision)
+   // {
+   //     if (collision.gameObject.CompareTag("Door"))
+   //     {
+   //         Debug.Log("Collide");
+   //         NextScene();
+   //     }
+   // }
 
     void NextScene()
     {
