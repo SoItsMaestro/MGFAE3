@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ArrowAttack : MonoBehaviour
 {
-    public float Speed;
-    public float ArrowDmg;
+    public float Speed;    
     public float ExpDmg;
     public float AimDmg;
     public float FrostDmg;
     public float ArcDmg;
     public float BarrageDmg;
+
+    public int ArrowDmgMin;
+    public int ArrowDmgMax;
 
     Rigidbody2D Rigid;
 

@@ -7,6 +7,8 @@ public class DestructableItems : MonoBehaviour
     public float Helath;
     public float CurrentHealth;
 
+    public int ArrowDmgMin = 1;
+    public int ArrowDmgMax = 3;
 
     void Start ()
     {
@@ -25,7 +27,7 @@ public class DestructableItems : MonoBehaviour
         ArrowAttack Damage = collision.gameObject.GetComponent<ArrowAttack>();
         if (Damage)
         {
-            CurrentHealth -= Damage.ArrowDmg;
+            CurrentHealth -= Random.Range(ArrowDmgMin, ArrowDmgMax);
             if (CurrentHealth <= 0)
             {
                 Destroy(gameObject);

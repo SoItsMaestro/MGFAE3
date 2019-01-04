@@ -33,6 +33,13 @@ public class MoveJump : MonoBehaviour
 
     private Rigidbody2D rigid;
 
+
+
+
+
+    public int BFletMim = 2;
+    public int BFletMax = 3;
+
     void Start()
     {                
         Once = false;
@@ -141,6 +148,17 @@ public class MoveJump : MonoBehaviour
                 if (Once == true)
                 {
                     StaticHealth.health -= 1;
+                    Debug.Log(StaticHealth.health);
+                }
+            }
+
+            if (collision.gameObject.CompareTag("EnemyProjectile"))
+            {
+                Once = true;
+                Invoke("ResetInvunrability", 2);
+                if (Once == true)
+                {
+                    StaticHealth.health -= Random.Range(BFletMim, BFletMax);
                     Debug.Log(StaticHealth.health);
                 }
             }

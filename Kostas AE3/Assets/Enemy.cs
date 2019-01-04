@@ -12,8 +12,11 @@ public class Enemy : MonoBehaviour
     public bool WolfCol = false;
     public float WolfAttpause;
     public float WolfAtt;
-   
-	void Start ()
+
+    public int ArrowDmgMin = 1;
+    public int ArrowDmgMax = 3;
+
+    void Start ()
     {
 		
 	}
@@ -37,7 +40,8 @@ public class Enemy : MonoBehaviour
         ArrowAttack Damage = collision.gameObject.GetComponent<ArrowAttack>();
         if(Damage)
         {            
-            CurrentHealth -= Damage.ArrowDmg;
+            CurrentHealth -= Random.Range(ArrowDmgMin, ArrowDmgMax);
+            Debug.Log(CurrentHealth);
             if(CurrentHealth <= 0)
             {
                 Destroy(gameObject);

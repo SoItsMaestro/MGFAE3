@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WolfPerim : MonoBehaviour
-{
-    
+{    
     public float Stop;
     internal Enemy enemy;
     public WolfMove Agro;
