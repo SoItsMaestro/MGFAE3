@@ -194,7 +194,19 @@ public class MoveJump : MonoBehaviour
         //    Destroy(gameObject);
         //    gameObject.transform.position = respawnPoint.transform.position;
         //}
+        if(collision.transform.CompareTag("MovingPlatform"))
+        {
+            transform.parent = collision.transform;
+        }
 
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("MovingPlatform"))
+        {
+            transform.parent = null;
+        }
     }
     void ResetInvunrability()
     {
@@ -214,6 +226,7 @@ public class MoveJump : MonoBehaviour
     {
         SceneManager.LoadScene("Transition");
     }
+
 
     
     

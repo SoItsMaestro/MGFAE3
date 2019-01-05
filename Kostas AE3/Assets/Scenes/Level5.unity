@@ -14885,6 +14885,7 @@ GameObject:
   - component: {fileID: 1671274031}
   - component: {fileID: 1671274030}
   - component: {fileID: 1671274029}
+  - component: {fileID: 1671274033}
   - component: {fileID: 1671274028}
   - component: {fileID: 1671274027}
   m_Layer: 0
@@ -15034,6 +15035,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671274033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1671274026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40afd9285f1fd24c8388ea547ae2b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Platform: {fileID: 0}
+  Speed: 0
+  CurrentPoint: {fileID: 0}
+  Points: []
+  PointSelection: 0
 --- !u!1 &1761155809
 GameObject:
   m_ObjectHideFlags: 0

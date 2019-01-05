@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4265295756379666}
   - component: {fileID: 212336428040936058}
+  - component: {fileID: 114053857422978276}
   - component: {fileID: 61399505292606792}
   - component: {fileID: 50067984360580470}
-  - component: {fileID: 114053857422978276}
   m_Layer: 11
   m_Name: ArrowToLeft
   m_TagString: Arrow
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: -500
-  ArrowDmg: 1
   ExpDmg: 0
   AimDmg: 0
   FrostDmg: 0

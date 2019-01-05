@@ -9,13 +9,9 @@ public class ArrowAttack : MonoBehaviour
     public float AimDmg;
     public float FrostDmg;
     public float ArcDmg;
-    public float BarrageDmg;
-
-    public int ArrowDmgMin;
-    public int ArrowDmgMax;
+    public float BarrageDmg;    
 
     Rigidbody2D Rigid;
-
 
     private void Start()
     {
