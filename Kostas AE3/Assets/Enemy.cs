@@ -59,6 +59,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ability2"))
+        {
+            CurrentHealth -= 3;
+            Debug.Log(CurrentHealth);
+            if (CurrentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     void WolfAttacking()
     {
         WolfAtt += Time.deltaTime;

@@ -15,6 +15,7 @@ TagManager:
   - Arrow
   - DestObj
   - MovingPlatform
+  - Ability2
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Wolf
   - Arrow
   - Chest
-  - 
+  - Ability
   - 
   - 
   - 

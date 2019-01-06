@@ -16,6 +16,8 @@ public class ExpArrow : MonoBehaviour
     public int ScreenPercent;
     private float dragDist;
     public GameObject ArrowExpRight, ArrowExpLeft;
+
+    public GameObject ExplosiveBlock;
     
     Vector2 ArrowPos;
 
@@ -176,7 +178,7 @@ public class ExpArrow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-
+            //ExplosiveBlock = transform.position;
             
         }
 

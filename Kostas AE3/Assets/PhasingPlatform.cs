@@ -9,6 +9,10 @@ public class PhasingPlatform : MonoBehaviour
     public float PhaseOff;
     public bool PhaseOnBool;
 
+    public GameObject Platform1, Platform2, Platform3, Platform4, Platform5, 
+        Platform6, Platform7, Platform8, Platform9, Platform10, Platform11, Platform12, 
+        Platform13, Platform14, Platform15;
+
     private void Start()
     {
         PhaseOnBool = false;
@@ -16,7 +20,7 @@ public class PhasingPlatform : MonoBehaviour
 
     void Update()
     {
-        FireActive();
+        PhaseActive();
         if (PhaseOn >= 2)
         {
             PhaseOnBool = true;
@@ -35,7 +39,7 @@ public class PhasingPlatform : MonoBehaviour
 
     }
 
-    void FireActive()
+    void PhaseActive()
     {
         PhaseOn += Time.deltaTime;
 
