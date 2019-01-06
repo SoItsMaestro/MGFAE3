@@ -11,18 +11,16 @@ public class FireballMovement : MonoBehaviour {
     
     void Start ()
     {
-        
+		wait_time = Random.Range(4, 6);
 	}
 
     private void Update()
     {
-        
+		FireballTimer();
     }
 
     private void FireballTimer()
     {
-        wait_time = Random.Range(4, 6);
-
         wait_time = -Time.deltaTime;
 
         if (wait_time <= 0)
@@ -33,7 +31,8 @@ public class FireballMovement : MonoBehaviour {
             float newY = Mathf.Cos(Time.time * speed) - StartHeight;
             //set the object's Y to the new calculated Y
             transform.position = new Vector2(pos.x, newY * -height);
-        }
+			wait_time = Random.Range(4, 6);
+		}
     }
     
 
