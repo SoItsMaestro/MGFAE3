@@ -14,7 +14,7 @@ public class NextLevel : MonoBehaviour
 
 IEnumerator StartLoadingScene()
     {
-        yield return new WaitForSeconds(2);        
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(StaticHealth.level);
     }
 }

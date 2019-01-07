@@ -11,15 +11,16 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collide");
-
+            //Debug.Log("Collide");
+            StaticHealth.level = LevelName;
             NextScene();
         }
     }
 
     void NextScene()
     {
-        StaticHealth.level = LevelName;
+       
+        Debug.Log(LevelName);
         SceneManager.LoadScene("Transition");
     }
 }

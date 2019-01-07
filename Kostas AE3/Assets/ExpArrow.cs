@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExpArrow : MonoBehaviour
 {
     public float ExpArrowWait;
-    private float ExpArrowWait_;
+    private float ExpArrowWait_;   
 
     private Vector3 FirstTouchPos;
     private Vector3 LastTouchPos;
@@ -15,11 +15,12 @@ public class ExpArrow : MonoBehaviour
 
     public int ScreenPercent;
     private float dragDist;
-    public GameObject ArrowExpRight, ArrowExpLeft;
-
-    public GameObject ExplosiveBlock;
+    public GameObject ArrowExpRight;
+    public GameObject ArrowExpLeft;
+    public GameObject ExplosiveBlock;    
     
     Vector2 ArrowPos;
+    Vector2 ExpBlock;
 
     public bool facingRight = true;
     public bool Right;
@@ -48,6 +49,7 @@ public class ExpArrow : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
@@ -134,29 +136,7 @@ public class ExpArrow : MonoBehaviour
             ExpArrowWait_ = Time.time + ExpArrowWait;
             fire();
         }                    
-    }
-
-    //void ExpArrowfire()
-    //{
-    //    float xdistance;
-    //    xdistance = HitPoint.position.x - FirePoint.position.x;
-    //
-    //    float ydistance;
-    //    ydistance = HitPoint.position.y - FirePoint.position.y;
-    //
-    //    float Angle;
-    //    Angle = Mathf.Atan((ydistance + 4.905f) / xdistance);
-    //
-    //    float TotalVelocity = xdistance / Mathf.Cos(Angle);
-    //
-    //    float xVelocity, yVelocity;
-    //    xVelocity = TotalVelocity * Mathf.Cos(Angle);
-    //    yVelocity = TotalVelocity * Mathf.Sin(Angle);
-    //
-    //    GameObject bulletInstance = Instantiate(ExplosionArrow, FirePoint.position, Quaternion.Euler(new Vector3(0, 0, 0))) as GameObject;
-    //    Rigid = bulletInstance.GetComponent<Rigidbody2D>();
-    //    Rigid.velocity = new Vector2(xVelocity, yVelocity);
-    //}
+    }    
 
     void fire()
     {
@@ -168,23 +148,12 @@ public class ExpArrow : MonoBehaviour
         }
         else
         {
-            ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
+            ArrowPos += new Vector2(+0.8f, 0f); //Sets the Left position of the arrow on the player
             Instantiate(ArrowExpLeft, ArrowPos, Quaternion.identity); //Creates the arrow
+            //RigidRight.velocity = new Vector2(+ArrowVelX * Time.deltaTime, -ArrowVelY * Time.deltaTime);
         }
         Down = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            //ExplosiveBlock = transform.position;
-            
-        }
-
-        //if (collision.gameObject.CompareTag("Ground"))
-        //{
-        //    Destroy(gameObject);
-        //}
-    }
+   
 }

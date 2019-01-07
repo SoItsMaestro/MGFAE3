@@ -141,11 +141,11 @@ public class MoveJump : MonoBehaviour
 
             }
         }
-        if (collision.gameObject.CompareTag("Door"))
-        {
-            Debug.Log("Collide");
-            NextScene();
-        }
+        //if (collision.gameObject.CompareTag("Door"))
+        //{
+        //    //Debug.Log("Collide");
+        //    //NextScene();
+        //}
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -189,11 +189,14 @@ public class MoveJump : MonoBehaviour
                 }
             }
         }
-        //if (StaticHealth.health <= 0)
+        if (StaticHealth.health <= 0)
         //{
         //    Destroy(gameObject);
         //    gameObject.transform.position = respawnPoint.transform.position;
+
+
         //}
+
         if(collision.transform.CompareTag("MovingPlatform"))
         {
             transform.parent = collision.transform;
@@ -226,6 +229,8 @@ public class MoveJump : MonoBehaviour
     {
         SceneManager.LoadScene("Transition");
     }
+
+    
 
 
     

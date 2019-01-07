@@ -8,6 +8,8 @@ public class Bolder : MonoBehaviour
     Vector2 BolderFall;
 
     Rigidbody2D rigid;
+
+    private ShakeBehavior Shaking;
     
 	
 	void Start ()
@@ -35,6 +37,7 @@ public class Bolder : MonoBehaviour
         }
         if(collision.gameObject.CompareTag("Ground"))
         {
+
             Destroy(gameObject);
         }
     }
