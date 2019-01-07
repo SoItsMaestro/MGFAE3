@@ -27,6 +27,9 @@ public class XBomberAttack : MonoBehaviour {
             //Code that shoots bombs from the diagnols.
             Debug.Log("X Has shot");
 
+
+
+
             XBombTimer = 3;
         }
 
