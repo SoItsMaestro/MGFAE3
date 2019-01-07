@@ -14,7 +14,7 @@ public class XBomberAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        void Xbombatk(); //not sure why it wont call
+        Xbombatk(); //not sure why it wont call (fixed it:))
 
     }
 
