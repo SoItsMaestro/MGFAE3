@@ -16,6 +16,18 @@ TagManager:
   - DestObj
   - MovingPlatform
   - Ability2
+  - BossAttack
+  - AirEss
+  - DummyBolts
+  - EarthEss
+  - BoneDust
+  - FireEss
+  - Pie
+  - LavaEss
+  - MushroomHead
+  - Skull
+  - SpecDust
+  - UndeadEss
   layers:
   - Default
   - TransparentFX
@@ -31,7 +43,7 @@ TagManager:
   - Arrow
   - Chest
   - Ability
-  - 
+  - Drops
   - 
   - 
   - 
