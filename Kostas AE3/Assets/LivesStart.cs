@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LivesStart : MonoBehaviour
 {
-    private void Awake()
-    {
-        DontDestroyOnLoad(transform.gameObject);
-    }
+   // private void Awake()
+   // {
+   //     DontDestroyOnLoad(transform.gameObject);
+   // }
 
     private void Start()
     {

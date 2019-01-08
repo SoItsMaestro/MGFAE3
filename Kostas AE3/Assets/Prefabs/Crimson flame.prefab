@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 114539838307816434}
   - component: {fileID: 114901219613501764}
   - component: {fileID: 61569603902179590}
+  - component: {fileID: 114459033749017570}
   - component: {fileID: 50837174590393676}
   m_Layer: 0
   m_Name: Crimson flame
@@ -118,6 +119,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114459033749017570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907247271307482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6c2a71e24e7334097402dcb73aaa50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DummyDrop: {fileID: 0}
+  Air: {fileID: 0}
+  Earth: {fileID: 0}
+  BoneDust: {fileID: 0}
+  Fire: {fileID: 0}
+  GoblinPie: {fileID: 0}
+  Lava: {fileID: 0}
+  Mushroom: {fileID: 0}
+  Skull: {fileID: 0}
+  Dust: {fileID: 0}
+  Death: {fileID: 0}
+  Gold: {fileID: 0}
 --- !u!114 &114539838307816434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,13 +154,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 6
+  EnemyName: Flame
   CurrentHealth: 6
   Speed: 2
   JumpStreangth: 0
   EnemyDamage: 0
-  WolfCol: 0
   WolfAttpause: 0
-  WolfAtt: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 3
 --- !u!114 &114901219613501764

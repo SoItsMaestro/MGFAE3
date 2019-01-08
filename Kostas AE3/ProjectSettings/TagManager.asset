@@ -16,6 +16,7 @@ TagManager:
   - DestObj
   - MovingPlatform
   - Ability2
+  - Wolf
   layers:
   - Default
   - TransparentFX

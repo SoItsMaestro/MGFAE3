@@ -5,35 +5,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float MaxHealth;
+    public string EnemyName;
     public float CurrentHealth;
     public float Speed;
     public float JumpStreangth;
     public float EnemyDamage;
-    public bool WolfCol = false;
     public float WolfAttpause;
-    public float WolfAtt;
+    private bool WolfAtt = true;   
 
     public int ArrowDmgMin = 1;
-    public int ArrowDmgMax = 3;
-
-    void Start ()
-    {
-		
-	}
-	
-	void Update ()
-    {
-        WolfAttacking();
-	    if(WolfCol == true)
-        {
-            Debug.Log("here");
-            StartCoroutine(Duration());
-        }
-        else
-        {
-            WolfCol = false;
-        }
-    }
+    public int ArrowDmgMax = 3;    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -47,43 +28,45 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        WolfMove WolfDmg = collision.gameObject.GetComponent<WolfMove>();
-        if(WolfDmg)
+       
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wolf"))
         {
-            WolfCol = true;
-            CurrentHealth -= WolfDmg.WolfDamage;
-            if (CurrentHealth <= 0)
+            if (WolfAtt)
             {
-                Destroy(gameObject);
+                WolfMove WolfDmg = collision.gameObject.GetComponent<WolfMove>();
+                Debug.Log("fgdsfsf");
+                CurrentHealth -= WolfDmg.WolfDamage;
+                if (CurrentHealth <= 0)
+                {
+                    Destroy(gameObject);
+                }
+                StartCoroutine(Duration());
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ability2"))
-        {
-            CurrentHealth -= 3;
-            Debug.Log(CurrentHealth);
-            if (CurrentHealth <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
-
-    void WolfAttacking()
-    {
-        WolfAtt += Time.deltaTime;
-        if (Time.time > WolfAttpause)
-        {
-            WolfAttpause = Time.time + WolfAtt;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    DestroyItem ExpDmg = collision.gameObject.GetComponent<DestroyItem>();
+    //    if (ExpDmg)
+    //    {
+    //        CurrentHealth -= 3;
+    //        Debug.Log(CurrentHealth);
+    //        if (CurrentHealth <= 0)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
 
     IEnumerator Duration()
     {
-        yield return new WaitForSeconds(1);
-        WolfAtt = 0;
+        WolfAtt = false;
+        yield return new WaitForSeconds(2);
+        WolfAtt = true;
     }
 }

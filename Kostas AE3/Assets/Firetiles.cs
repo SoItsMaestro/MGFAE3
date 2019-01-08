@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Firetiles : MonoBehaviour
 {
+    public GameObject fire, fire2, fire3;
+
     public float Fireoff;
     public float FireOn;
     public bool FireOnbool;
@@ -19,6 +21,9 @@ public class Firetiles : MonoBehaviour
         FireActive();
         if(FireOn >= 1)
         {
+            fire.gameObject.SetActive(true);
+            fire2.gameObject.SetActive(true);
+            fire3.gameObject.SetActive(true);
             FireOnbool = true;
             
             if (FireOnbool == true)
@@ -30,6 +35,9 @@ public class Firetiles : MonoBehaviour
         else
         {
             FireOnbool = false;
+            fire.gameObject.SetActive(false);
+            fire2.gameObject.SetActive(false);
+            fire3.gameObject.SetActive(false);
         }
         
     }
@@ -50,7 +58,7 @@ public class Firetiles : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                Destroy(collision.gameObject);
+                StaticHealth.health = 0;
                 Debug.Log("Collide");
             }            
         }
@@ -59,6 +67,7 @@ public class Firetiles : MonoBehaviour
     IEnumerator Duration()
     {
         yield return new WaitForSeconds(1);
+       
         FireOn = 0;
     }
 }

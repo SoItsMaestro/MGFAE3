@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ae2b10f7eb87441a6509fd482b15e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrowVelX: 100
-  ArrowVelY: 50
+  ArrowVelX: 200
+  ArrowVelY: 100
   ExplosiveBlock: {fileID: 1599859630199520, guid: 7d40436ee0ae3134b8b072f7d4ed4e4d,
     type: 2}
 --- !u!212 &212997673494227144
