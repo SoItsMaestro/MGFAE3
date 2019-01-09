@@ -9,6 +9,8 @@ public class Firetiles : MonoBehaviour
     public float Fireoff;
     public float FireOn;
     public bool FireOnbool;
+
+    public GameObject SecondSafe;
 	
 	void Start ()
     {
@@ -61,7 +63,8 @@ public class Firetiles : MonoBehaviour
                 StaticHealth.health = 0;
                 Debug.Log("Collide");
             }            
-        }
+        }        
+
     }
 
     IEnumerator Duration()
