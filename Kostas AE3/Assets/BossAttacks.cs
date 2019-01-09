@@ -41,12 +41,8 @@ public class BossAttacks : MonoBehaviour {
 
                 Instantiate(
                     RagingSwipe,
-                    transform.position/*(new Vector2 (17,0))*/,
+                    transform.position,
                     Quaternion.identity);
-
-                Rigidbody2D rigidBody = RagingSwipe.GetComponent<Rigidbody2D>();
-                rigidBody.AddForce(new Vector2(-10000.0f, 0f));
-
                 timerrange = Random.Range(4, 8);
             }
             else if (attackrange >= 40f && attackrange < 55f) //Magma Bomb Drop
@@ -57,9 +53,6 @@ public class BossAttacks : MonoBehaviour {
                     MagmaBomb,
                     transform.position,
                     Quaternion.identity);
-
-                Rigidbody2D rigidBodybomb = MagmaBomb.GetComponent<Rigidbody2D>();
-                rigidBodybomb.AddForce(new Vector2(0f, 0f)); //add force downwards!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                 timerrange = Random.Range(4, 8);
 
@@ -88,12 +81,7 @@ public class BossAttacks : MonoBehaviour {
             {
                 timerrange = Random.Range(4, 8);
             }
-
-
         }
-        
     }
-        
+
 }
-
-
