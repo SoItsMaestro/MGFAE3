@@ -18,17 +18,18 @@ public class StaticInventory : MonoBehaviour {
         private static int volcanicEssence;
         private static int essanceOfEarth;
         private static int shroomHead;
+        private static int inventorySpace;
 
 
-        public static int Gold
+        public static int InventorySpace
         {
             get
             {
-                return gold;
+                return inventorySpace;
             }
             set
             {
-                gold = value;
+                inventorySpace = value;
             }
         }
 
