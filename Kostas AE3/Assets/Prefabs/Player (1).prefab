@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 95752379627693840}
   - component: {fileID: 70040757041412678}
   - component: {fileID: 114937351840130810}
+  - component: {fileID: 114034142494978140}
   m_Layer: 9
   m_Name: Player (1)
   m_TagString: Player
@@ -45,6 +46,7 @@ GameObject:
   - component: {fileID: 61215377437777052}
   - component: {fileID: 61748431926543712}
   - component: {fileID: 114948068567463052}
+  - component: {fileID: 50905509380226696}
   m_Layer: 10
   m_Name: Perimiter
   m_TagString: Untagged
@@ -101,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300747079608708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -1.94, z: 0}
+  m_LocalPosition: {x: -0.73, y: -2.72, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4169230499078610}
@@ -129,6 +131,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!50 &50905509380226696
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1401106109501750}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61215377437777052
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -212,6 +234,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114034142494978140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300747079608708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea30da4dc882c59439e6c879528a01be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114160867569635846
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,13 +318,13 @@ MonoBehaviour:
   ScreenPercent: 30
   ArrowExpRight: {fileID: 1465802345457816, guid: cd8c236219c6b0943a5afdd50fe3549d,
     type: 2}
-  ArrowExpLeft: {fileID: 0}
-  ExplosiveBlock: {fileID: 0}
-  facingRight: 1
+  ArrowExpLeft: {fileID: 1864842639751734, guid: 718d83c45180f5a4eb2725cc5165ba9b,
+    type: 2}
   Right: 0
   Left: 0
   Up: 0
   Down: 0
+  Direction: {fileID: 114584675596427316}
 --- !u!114 &114948068567463052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,8 +336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c44e726f6fbc1642a5dae5d66753119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stop: 0
+  Stop: 1
   Agro: {fileID: 0}
+  RayLengthEnemy: 0
 --- !u!212 &212003953199290542
 SpriteRenderer:
   m_ObjectHideFlags: 1

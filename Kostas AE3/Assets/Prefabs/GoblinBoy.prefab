@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114100223601143878}
   - component: {fileID: 61147867090749150}
   - component: {fileID: 50043056707342378}
+  - component: {fileID: 114652963649624704}
   m_Layer: 0
   m_Name: GoblinBoy
   m_TagString: Enemy
@@ -145,13 +146,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 6
+  EnemyName: Goblin
   CurrentHealth: 6
   Speed: 2
   JumpStreangth: 0
   EnemyDamage: 0
-  WolfCol: 0
   WolfAttpause: 0
-  WolfAtt: 0
+  ArrowDmgMin: 1
+  ArrowDmgMax: 3
+--- !u!114 &114652963649624704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491747321578250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6c2a71e24e7334097402dcb73aaa50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DummyDrop: {fileID: 0}
+  Air: {fileID: 0}
+  Earth: {fileID: 0}
+  BoneDust: {fileID: 0}
+  Fire: {fileID: 0}
+  GoblinPie: {fileID: 0}
+  Lava: {fileID: 0}
+  Mushroom: {fileID: 0}
+  Skull: {fileID: 0}
+  Dust: {fileID: 0}
+  Death: {fileID: 0}
+  Gold: {fileID: 0}
 --- !u!212 &212510868507933264
 SpriteRenderer:
   m_ObjectHideFlags: 1

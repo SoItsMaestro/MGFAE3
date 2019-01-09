@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathTile : MonoBehaviour
-{
-    public GameObject Spike;
+public class Ability1 : MonoBehaviour {
+
+    public WolfMove WolfScrips;
+    public GameObject Wolf;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StaticHealth.health = 0;
-            Debug.Log("Collide");
+            Wolf.gameObject.SetActive(false);
+            WolfScrips.enabled = true;
+
         }
     }
 }

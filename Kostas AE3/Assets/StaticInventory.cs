@@ -6,7 +6,6 @@ public class StaticInventory : MonoBehaviour {
 
     public static class InvStatic
     {
-        private static int inventoryspace;
         private static int gold;
         private static int dummyBolt;
         private static int goblinPie;
@@ -20,18 +19,6 @@ public class StaticInventory : MonoBehaviour {
         private static int essanceOfEarth;
         private static int shroomHead;
 
-
-        public static int InventorySpace
-        {
-            get
-            {
-                return inventoryspace;
-            }
-            set
-            {
-                inventoryspace = value;
-            }
-        }
 
         public static int Gold
         {

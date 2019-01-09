@@ -45,15 +45,19 @@ public class WolfMove : MonoBehaviour
         }
 
         
-        if (Physics2D.Linecast(transform.position - new Vector3(RayLength, 0, 0), transform.position + new Vector3(RayLength, 0, 0), 1 << LayerMask.NameToLayer("Ground")))
+        if ((Physics2D.Linecast(transform.position - new Vector3(RayLength, 0, 0), transform.position + new Vector3(RayLength, 0, 0), 1 << LayerMask.NameToLayer("Ground"))) && (Physics2D.Linecast(transform.position - new Vector3(0, RayLength, 0), transform.position + new Vector3(0, RayLength, 0), 1 << LayerMask.NameToLayer("Ground"))))
         {
-            
-            Debug.Log("ForceAdded");
-            rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
-            JumpStop = false;            
-        }
+            //if (Physics2D.Linecast(transform.position - new Vector3(0, RayLength, 0), transform.position + new Vector3(0, RayLength, 0), 1 << LayerMask.NameToLayer("Ground")))
+            //{
 
-        
+                Debug.Log("ForceAdded");
+                rigid.velocity = new Vector2(rigid.velocity.x, JumpStrength);
+                JumpStop = false;
+            //}
+        }
+        Debug.DrawLine(transform.position - new Vector3(RayLength, 0, 0), transform.position + new Vector3(RayLength, 0, 0), Color.blue);
+        Debug.DrawLine(transform.position - new Vector3(0, RayLength, 0), transform.position + new Vector3(0, RayLength, 0), Color.red);
+
     }
     
 }

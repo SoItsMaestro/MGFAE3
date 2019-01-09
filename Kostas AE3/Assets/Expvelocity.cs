@@ -6,10 +6,14 @@ public class Expvelocity : MonoBehaviour
 {
     Rigidbody2D Rigid;
 
+    
+
     public float ArrowVelX;
     public float ArrowVelY;
     public GameObject ExplosiveBlock;
     Vector2 ExpBlock;
+
+
     void Start ()
     {
         Rigid = GetComponent<Rigidbody2D>();

@@ -17,16 +17,17 @@ public class ExpArrow : MonoBehaviour
     private float dragDist;
     public GameObject ArrowExpRight;
     public GameObject ArrowExpLeft;
-    public GameObject ExplosiveBlock;    
-    
+       
     Vector2 ArrowPos;
     Vector2 ExpBlock;
 
-    public bool facingRight = true;
+    
     public bool Right;
     public bool Left;
     public bool Up;
     public bool Down;
+
+    public MoveJump Direction;
 
     //public Transform HitPoint;
     //public Transform FirePoint;
@@ -141,14 +142,14 @@ public class ExpArrow : MonoBehaviour
     void fire()
     {
         ArrowPos = transform.position;
-        if (facingRight) //Checks the way the player is facing
+        if (Direction.facingRight) //Checks the way the player is facing
         {
             ArrowPos += new Vector2(+0.8f, 0f); //Sets the Right position of the arrow on the player
             Instantiate(ArrowExpRight, ArrowPos, Quaternion.identity); //Creates the arrow
         }
         else
         {
-            ArrowPos += new Vector2(+0.8f, 0f); //Sets the Left position of the arrow on the player
+            ArrowPos += new Vector2(-0.8f, 0f); //Sets the Left position of the arrow on the player
             Instantiate(ArrowExpLeft, ArrowPos, Quaternion.identity); //Creates the arrow
             //RigidRight.velocity = new Vector2(+ArrowVelX * Time.deltaTime, -ArrowVelY * Time.deltaTime);
         }
