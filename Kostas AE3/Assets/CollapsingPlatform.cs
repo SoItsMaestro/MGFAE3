@@ -29,6 +29,7 @@ public class CollapsingPlatform : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     IEnumerator Fall()
