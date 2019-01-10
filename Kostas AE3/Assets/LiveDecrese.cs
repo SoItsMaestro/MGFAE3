@@ -11,15 +11,7 @@ public class LiveDecrese : MonoBehaviour
     public GameObject Heart4;
 
     void Update ()
-    {       
-
-        if (StaticHealth.health == 4)
-        {
-            Heart4.gameObject.SetActive(true);
-            Heart3.gameObject.SetActive(false);
-            Heart2.gameObject.SetActive(false);
-            Heart1.gameObject.SetActive(false);
-        }
+    {          
 
         if (StaticHealth.health == 3)
         {
