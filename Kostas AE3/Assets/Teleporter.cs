@@ -4,31 +4,34 @@ using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    public GameObject Portal1;
+    public Teleporter Portal1;
     //public GameObject Portal2;
     public GameObject Player;
-    //public bool TeleOnce = true;   
+    public bool TeleActive = true;   
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-          if (collision.gameObject.CompareTag("Player"))
-          {
-                
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (TeleActive)
+            {
                 StartCoroutine(Teleport());
-          }
-        
+            }
+        }        
     }
-    //public void OnTriggerExit2D(Collider2D collision)
-    //{       
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        TeleOnce = false;
-    //    }
-    //}
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            TeleActive = true;
+        }
+    }   
 
     IEnumerator Teleport()
     {        
-        yield return new WaitForSeconds(1);
-        Player.transform.position = new Vector2(Portal1.transform.position.x, Portal1.transform.position.y);       
+        Portal1.TeleActive = false;
+        yield return new WaitForSeconds(2);
+        Player.transform.position = new Vector2(Portal1.transform.position.x, Portal1.transform.position.y);
     }
 }

@@ -110,6 +110,11 @@ public class MoveJump : MonoBehaviour
         }
     }
 
+    void HoldShot()
+    {
+
+    }
+
     void flip(float Horizontal) //Flip function
     {
         if(Horizontal > 0 && !facingRight  || Horizontal < 0 && facingRight) //Checks which way the player is facing

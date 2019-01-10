@@ -18,23 +18,36 @@ public class DummyDrops : MonoBehaviour
     public GameObject Death;
     public GameObject Gold;
 
-    int DummyBolt = Random.Range(0, 100);
-    int EssAir = Random.Range(0, 100);
-    int EssEarth = Random.Range(0, 100);
-    int BDust = Random.Range(0, 100);
-    int EssFire = Random.Range(0, 100);
-    int Goblin = Random.Range(0, 100);
-    int EssLavet = Random.Range(0, 100);
-    int MushroomHead = Random.Range(0, 100);
-    int SSkull = Random.Range(0, 100);
-    int OtherDust = Random.Range(0, 100);
-    int DieBoi = Random.Range(0, 100);
-    int GoldBoi = Random.Range(0, 100);
+    int DummyBolt;
+    int EssAir;
+    int EssEarth;
+    int BDust;
+    int EssFire;
+    int Goblin;
+    int EssLavet;
+    int MushroomHead;
+    int SSkull;
+    int OtherDust;
+    int DieBoi;
+    int GoldBoi;
 
     private string Name;
     private void Start()
     {
         Name = GetComponent<Enemy>().EnemyName;
+
+        DummyBolt = Random.Range(0, 100);
+        EssAir = Random.Range(0, 100);
+        EssEarth = Random.Range(0, 100);
+        BDust = Random.Range(0, 100);
+        EssFire = Random.Range(0, 100);
+        Goblin = Random.Range(0, 100);
+        EssLavet = Random.Range(0, 100);
+        MushroomHead = Random.Range(0, 100);
+        SSkull = Random.Range(0, 100);
+        OtherDust = Random.Range(0, 100);
+        DieBoi = Random.Range(0, 100);
+        GoldBoi = Random.Range(0, 100);
     }
     void Update()
     {

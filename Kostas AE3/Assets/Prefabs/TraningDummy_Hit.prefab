@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 212503883177555878}
   - component: {fileID: 70770970413733378}
   - component: {fileID: 50555191760071372}
-  - component: {fileID: 114302955006851690}
+  - component: {fileID: 114737542264420166}
   - component: {fileID: 114257840784113836}
   m_Layer: 0
   m_Name: TraningDummy_Hit
-  m_TagString: Enemy
+  m_TagString: DestObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631563319245266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6c2a71e24e7334097402dcb73aaa50, type: 3}
   m_Name: 
@@ -102,7 +102,7 @@ MonoBehaviour:
   Dust: {fileID: 1098499345397000, guid: 87814509e9964d847a91ae8f5bfd9f4b, type: 2}
   Death: {fileID: 1807354846211712, guid: b99843c0d49eab748b2192abaa99006c, type: 2}
   Gold: {fileID: 0}
---- !u!114 &114302955006851690
+--- !u!114 &114737542264420166
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,15 +110,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1631563319245266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab2b9d45c70b1440b6140fb1b73052a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d9383a754a855d40973ba3f94c25883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 4
   EnemyName: Dummy
   CurrentHealth: 4
-  Speed: 0
-  JumpStreangth: 0
-  EnemyDamage: 0
   WolfAttpause: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 3

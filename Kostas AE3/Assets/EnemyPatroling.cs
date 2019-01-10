@@ -8,7 +8,7 @@ public class EnemyPatroling : MonoBehaviour
     public float RayLength;
     public float RayLength2;
     
-    private bool Right = true;
+    public bool Right = true;
 
     public Transform Ground;
 
