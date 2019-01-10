@@ -4,21 +4,34 @@ using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
 {
+    public GameObject Air;
+    public GameObject Bolts;
+    public GameObject Earth;
+    public GameObject Bone;
+    public GameObject Fire;
+    public GameObject Pie;
+    public GameObject Lava;
+    public GameObject Mushroom;
+    public GameObject Skull;
+    public GameObject Spec;
+    public GameObject Undead;
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("AirEss") && StaticInventory.InvStatic.InventorySpace < 8)
         {
             StaticInventory.InvStatic.EssenceOfAir++;
             StaticInventory.InvStatic.InventorySpace++;
+            Air.gameObject.SetActive(false);
             Debug.Log("AirEss Picked Up");
+            
         }
 
         if (collision.gameObject.CompareTag("DummyBolts") && StaticInventory.InvStatic.InventorySpace < 8)
         {
             StaticInventory.InvStatic.DummyBolt++;
             StaticInventory.InvStatic.InventorySpace++;
+            Bolts.gameObject.SetActive(false);
             Debug.Log("Bolts Picked Up");
         }
 
@@ -26,6 +39,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.EssanceOfEarth++;
             StaticInventory.InvStatic.InventorySpace++;
+            Earth.gameObject.SetActive(false);
             Debug.Log("EarthEss Picked Up");
         }
 
@@ -33,6 +47,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.BoneDust++;
             StaticInventory.InvStatic.InventorySpace++;
+            Bone.gameObject.SetActive(false);
             Debug.Log("BoneDust Picked Up");
         }
 
@@ -40,6 +55,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.EssanceOfFire++;
             StaticInventory.InvStatic.InventorySpace++;
+            Fire.gameObject.SetActive(false);
             Debug.Log("FireEss Picked Up");
         }
 
@@ -47,6 +63,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.GoblinPie++;
             StaticInventory.InvStatic.InventorySpace++;
+            Pie.gameObject.SetActive(false);
             Debug.Log("Pie Picked Up");
         }
 
@@ -54,6 +71,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.VolcanicEssance++;
             StaticInventory.InvStatic.InventorySpace++;
+            Lava.gameObject.SetActive(false);
             Debug.Log("LavaEss Picked Up");
         }
 
@@ -61,6 +79,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.ShroomHead++;
             StaticInventory.InvStatic.InventorySpace++;
+            Mushroom.gameObject.SetActive(false);
             Debug.Log("MushroomHead Picked Up");
         }
 
@@ -68,6 +87,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.Skull++;
             StaticInventory.InvStatic.InventorySpace++;
+            Skull.gameObject.SetActive(false);
             Debug.Log("Skull Picked Up");
         }
 
@@ -75,6 +95,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.SpectralDust++;
             StaticInventory.InvStatic.InventorySpace++;
+            Spec.gameObject.SetActive(false);
             Debug.Log("SpecDust Picked Up");
         }
 
@@ -82,6 +103,7 @@ public class ItemPickUp : MonoBehaviour
         {
             StaticInventory.InvStatic.EssenceOfUndeath++;
             StaticInventory.InvStatic.InventorySpace++;
+            Undead.gameObject.SetActive(false);
             Debug.Log("UndeadEss Picked Up");
         }
 

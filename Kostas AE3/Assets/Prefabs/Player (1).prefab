@@ -78,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1401106109501750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.90000004, y: -0.03333346, z: 0}
+  m_LocalPosition: {x: 0.9, y: -0.03333346, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4676846697828152}
@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300747079608708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.59, y: -1.08, z: 0}
+  m_LocalPosition: {x: -6.19, y: 1.7415562, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4169230499078610}
@@ -351,6 +351,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99016b61124b9948949ce1b3b741dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Air: {fileID: 1315596219023056, guid: 06e4035b23c6c89409edb523506702b0, type: 2}
+  Bolts: {fileID: 1115273975249538, guid: 356d011121ea02448962c7ca61eb5813, type: 2}
+  Earth: {fileID: 1569947339791384, guid: 62a3b0159e3407a4ca8f67c9f111e7f0, type: 2}
+  Bone: {fileID: 1637209735378666, guid: c6716816ca2114a44ae2d02024c0b0c0, type: 2}
+  Fire: {fileID: 1471877247674840, guid: 937934c11c78dcf439d5a3a1ff600075, type: 2}
+  Pie: {fileID: 1658467869741918, guid: 7601b94124be20b4cb7cd785942c6841, type: 2}
+  Lava: {fileID: 1606457336545912, guid: c563bfa62a2f8354c83546d34f1695bf, type: 2}
+  Mushroom: {fileID: 1468261970701788, guid: e0b1379e160bb5d4bb6eb6aca93af095, type: 2}
+  Skull: {fileID: 1846359125051214, guid: 628326e54fb427a44b770d002bf463f3, type: 2}
+  Spec: {fileID: 1098499345397000, guid: 87814509e9964d847a91ae8f5bfd9f4b, type: 2}
+  Undead: {fileID: 1807354846211712, guid: b99843c0d49eab748b2192abaa99006c, type: 2}
 --- !u!212 &212003953199290542
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -431,7 +442,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 524db01833c03a24f9843759f0b4c98e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfac9d18781d98c4780974cccf31b53a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

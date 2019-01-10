@@ -12,21 +12,36 @@ public class LiveDecrese : MonoBehaviour
 
     void Update ()
     {       
+
+        if (StaticHealth.health == 4)
+        {
+            Heart4.gameObject.SetActive(true);
+            Heart3.gameObject.SetActive(false);
+            Heart2.gameObject.SetActive(false);
+            Heart1.gameObject.SetActive(false);
+        }
+
         if (StaticHealth.health == 3)
         {
             Debug.Log("Calculation Correct");
             Heart1.gameObject.SetActive(false);
+            Heart2.gameObject.SetActive(false);
+            Heart3.gameObject.SetActive(true);
+            Heart4.gameObject.SetActive(false);
         }
         if (StaticHealth.health == 2)
         {
             Debug.Log("Calculation Correct");
             Heart1.gameObject.SetActive(false);
-            Heart2.gameObject.SetActive(false);
+            Heart2.gameObject.SetActive(true);
+            Heart3.gameObject.SetActive(false);
+            Heart4.gameObject.SetActive(false);
         }
         if (StaticHealth.health == 1)
         {
             Debug.Log("Calculation Correct");
-            Heart1.gameObject.SetActive(false);
+            Heart4.gameObject.SetActive(false);
+            Heart1.gameObject.SetActive(true);
             Heart2.gameObject.SetActive(false);
             Heart3.gameObject.SetActive(false);
         }

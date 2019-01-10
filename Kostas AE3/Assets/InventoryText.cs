@@ -50,89 +50,100 @@ public class InventoryText : MonoBehaviour {
 
     public void AirDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.EssenceOfAir >0)
         {
             StaticInventory.InvStatic.EssenceOfAir--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void EarthDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.EssanceOfEarth >0)
         {
             StaticInventory.InvStatic.EssanceOfEarth--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void LavaDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.VolcanicEssance >0)
         {
             StaticInventory.InvStatic.VolcanicEssance--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void FireDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.EssanceOfFire >0)
         {
             StaticInventory.InvStatic.EssanceOfFire--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void UndeadDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.EssenceOfUndeath >0)
         {
             StaticInventory.InvStatic.EssenceOfUndeath--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void BoltsDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.DummyBolt >0)
         {
             StaticInventory.InvStatic.DummyBolt--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void BoneDustDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.BoneDust >0)
         {
             StaticInventory.InvStatic.BoneDust--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void PieDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.GoblinPie >0)
         {
             StaticInventory.InvStatic.GoblinPie--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void MushroomDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.ShroomHead >0)
         {
             StaticInventory.InvStatic.ShroomHead--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void SkullDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.Skull >0)
         {
             StaticInventory.InvStatic.Skull--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
     public void SpecDustDeleteFunc()
     {
-        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0)
+        if (StaticInventory.InvStatic.InventorySpace <= 8 && StaticInventory.InvStatic.InventorySpace > 0 && StaticInventory.InvStatic.SpectralDust >0)
         {
             StaticInventory.InvStatic.SpectralDust--;
+            StaticInventory.InvStatic.InventorySpace--;
         }
     }
 
