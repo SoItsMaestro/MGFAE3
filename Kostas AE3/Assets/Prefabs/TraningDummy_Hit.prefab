@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631563319245266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.53, y: -2.53, z: 0}
+  m_LocalPosition: {x: 6.53, y: -2.559, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,17 +90,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6c2a71e24e7334097402dcb73aaa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DummyDrop: {fileID: 0}
-  Air: {fileID: 0}
-  Earth: {fileID: 0}
-  BoneDust: {fileID: 0}
-  Fire: {fileID: 0}
-  GoblinPie: {fileID: 0}
-  Lava: {fileID: 0}
-  Mushroom: {fileID: 0}
-  Skull: {fileID: 0}
-  Dust: {fileID: 0}
-  Death: {fileID: 0}
+  DummyDrop: {fileID: 1115273975249538, guid: 356d011121ea02448962c7ca61eb5813, type: 2}
+  Air: {fileID: 1315596219023056, guid: 06e4035b23c6c89409edb523506702b0, type: 2}
+  Earth: {fileID: 1569947339791384, guid: 62a3b0159e3407a4ca8f67c9f111e7f0, type: 2}
+  BoneDust: {fileID: 1637209735378666, guid: c6716816ca2114a44ae2d02024c0b0c0, type: 2}
+  Fire: {fileID: 1471877247674840, guid: 937934c11c78dcf439d5a3a1ff600075, type: 2}
+  GoblinPie: {fileID: 1658467869741918, guid: 7601b94124be20b4cb7cd785942c6841, type: 2}
+  Lava: {fileID: 1606457336545912, guid: c563bfa62a2f8354c83546d34f1695bf, type: 2}
+  Mushroom: {fileID: 1468261970701788, guid: e0b1379e160bb5d4bb6eb6aca93af095, type: 2}
+  Skull: {fileID: 1846359125051214, guid: 628326e54fb427a44b770d002bf463f3, type: 2}
+  Dust: {fileID: 1098499345397000, guid: 87814509e9964d847a91ae8f5bfd9f4b, type: 2}
+  Death: {fileID: 1807354846211712, guid: b99843c0d49eab748b2192abaa99006c, type: 2}
   Gold: {fileID: 0}
 --- !u!114 &114302955006851690
 MonoBehaviour:

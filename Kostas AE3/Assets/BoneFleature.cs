@@ -7,19 +7,32 @@ public class BoneFleature : MonoBehaviour
     public GameObject BFProjectile;
 
     public bool facingRight = true;
+    public bool once = false;
 
     Vector2 BonePos;
     public float FireRate;
-    float nextfire;   
+    float nextfire;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        Debug.Log("work");
-        if (collision.gameObject.CompareTag("Player") && Time.time > nextfire)
-        {
-             nextfire = Time.time + FireRate;
-             fire();
-        }       
+        nextfire = Time.time + FireRate;
+        StartCoroutine(ShootyBoi());
+    }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log("work");
+    //    if (collision.gameObject.CompareTag("Player") && Time.time > nextfire)
+    //    {
+    //         nextfire = Time.time + FireRate;
+    //         fire();
+    //    }       
+    //}
+
+    IEnumerator ShootyBoi()
+    {
+        yield return new WaitForSeconds(2);
+            fire();
     }
 
     void fire() //Fire funcction
@@ -36,4 +49,6 @@ public class BoneFleature : MonoBehaviour
          Instantiate(BFProjectile, BonePos, Quaternion.identity); //Creates the arrow  
        }
     }
+
+    
 }
