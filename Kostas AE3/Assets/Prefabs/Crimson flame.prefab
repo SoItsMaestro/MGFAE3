@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114459033749017570}
   - component: {fileID: 50837174590393676}
   - component: {fileID: 61557748603825728}
-  - component: {fileID: 114168574740858386}
+  - component: {fileID: 114617360571754518}
   m_Layer: 0
   m_Name: Crimson flame
   m_TagString: Enemy
@@ -69,8 +69,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907247271307482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.36, y: 0.74, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalScale: {x: 1.6313027, y: 1.8328123, z: 1}
   m_Children:
   - {fileID: 4184028457729202}
   m_Father: {fileID: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,34 +133,19 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.11215022, y: 0.1144993}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.77569956, y: 0.84146255}
   m_EdgeRadius: 0
---- !u!114 &114168574740858386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1907247271307482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87495bb6c1b5042419a439c6df0ebf43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BFProjectile: {fileID: 1340662658053910, guid: f58157ed3600e7747971b43813ad4888,
-    type: 2}
-  facingRight: 0
-  FireRate: 3
 --- !u!114 &114459033749017570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,6 +189,24 @@ MonoBehaviour:
   WolfAttpause: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 3
+--- !u!114 &114617360571754518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907247271307482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf313f04c6a3da3459168ad1de62c4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CFProjectile: {fileID: 1655261175323056, guid: 673459e01e27e664eb7520f3a4e5f507,
+    type: 2}
+  CFProjectileL: {fileID: 1655261175323056, guid: 8e8a98c2795db82439a66d460f604b0a,
+    type: 2}
+  Direction: {fileID: 0}
+  once: 0
+  FireRate: 1
 --- !u!114 &114901219613501764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +221,7 @@ MonoBehaviour:
   Speed: 2
   RayLength: 1
   RayLength2: 1
+  Right: 1
   Ground: {fileID: 4184028457729202}
 --- !u!212 &212741622178589936
 SpriteRenderer:
@@ -254,7 +258,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a3409cc4fb1f664391979779c6dc2de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9376ed6785ce6344394d13477d7a9d4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Expvelocity : MonoBehaviour
 {
-    Rigidbody2D Rigid;
-
-    
+    Rigidbody2D Rigid;   
 
     public float ArrowVelX;
     public float ArrowVelY;

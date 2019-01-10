@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1402480626979258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.52, y: 17.18, z: 0}
+  m_LocalPosition: {x: 8.608798, y: 8.908339, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -147,10 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87495bb6c1b5042419a439c6df0ebf43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BFProjectile: {fileID: 1340662658053910, guid: f58157ed3600e7747971b43813ad4888,
+  BFProjectile: {fileID: 1852984086222316, guid: ec8037df254040440bc67f95abe695c2,
     type: 2}
   facingRight: 0
-  FireRate: 3
+  once: 0
+  FireRate: 10
 --- !u!114 &114739631167278298
 MonoBehaviour:
   m_ObjectHideFlags: 1
