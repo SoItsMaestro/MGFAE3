@@ -12932,7 +12932,7 @@ MonoBehaviour:
   CurrentHealth: 12
   Speed: 0
   JumpStreangth: 0
-  EnemyDamage: 0
+  EnemyDamage: 1
   WolfAttpause: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 1
@@ -12982,7 +12982,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.009891629, y: 0.021761596}
@@ -15702,7 +15702,7 @@ MonoBehaviour:
   CurrentHealth: 12
   Speed: 0
   JumpStreangth: 0
-  EnemyDamage: 0
+  EnemyDamage: 1
   WolfAttpause: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 1
@@ -15752,7 +15752,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0026719272, y: 0.022709548}
@@ -55363,7 +55363,7 @@ MonoBehaviour:
   CurrentHealth: 12
   Speed: 0
   JumpStreangth: 0
-  EnemyDamage: 0
+  EnemyDamage: 1
   WolfAttpause: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 1
@@ -55413,7 +55413,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.013989568, y: 0.008393884}
@@ -57991,7 +57991,7 @@ MonoBehaviour:
   CurrentHealth: 12
   Speed: 0
   JumpStreangth: 0
-  EnemyDamage: 0
+  EnemyDamage: 1
   WolfAttpause: 0
   ArrowDmgMin: 1
   ArrowDmgMax: 1
@@ -58041,7 +58041,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.0036679208, y: 0.018340036}
