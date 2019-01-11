@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 95752379627693840}
   - component: {fileID: 70040757041412678}
   - component: {fileID: 114937351840130810}
+  - component: {fileID: 114307307542017346}
   - component: {fileID: 114034142494978140}
   m_Layer: 9
   m_Name: Player (1)
@@ -104,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300747079608708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8751602, y: -0.13546133, z: 0}
+  m_LocalPosition: {x: -9.27, y: -0.86, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4169230499078610}
@@ -257,6 +258,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5f30a26f308054798c0d237d6b6847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114307307542017346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300747079608708}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b590e13d511478d4abc65f747a2f0fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExpArrowWait: 40
+  ScreenPercent: 30
+  ArrowFreRight: {fileID: 1915869279081010, guid: 032c366052c06b74ea85d7e3bdc883e8,
+    type: 2}
+  ArrowFreLeft: {fileID: 1800948712773572, guid: d07a9517893f0e04fbef38cd6e6f97d8,
+    type: 2}
+  Right: 0
+  Left: 0
+  Up: 0
+  Down: 0
+  Direction: {fileID: 114584675596427316}
 --- !u!114 &114440212834144828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,7 +333,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300747079608708}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 548f34757771c3540b834cd27683e213, type: 3}
   m_Name: 
